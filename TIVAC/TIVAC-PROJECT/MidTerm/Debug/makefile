@@ -10,7 +10,7 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
-"./cpe403_midterm_template.obj" \
+"./midterm.obj" \
 "./tm4c123gh6pm_startup_ccs.obj" \
 "./uartstdio.obj" \
 "./ustdlib.obj" \
@@ -124,42 +124,42 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXE_OUTPUTS += \
-midterm.out \
+lab10.out \
 
 EXE_OUTPUTS__QUOTED += \
-"midterm.out" \
+"lab10.out" \
 
 BIN_OUTPUTS += \
-midterm.hex \
+lab10.hex \
 
 BIN_OUTPUTS__QUOTED += \
-"midterm.hex" \
+"lab10.hex" \
 
 
 # All Target
 all: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
-	@$(MAKE) --no-print-directory -Onone "midterm.out"
+	@$(MAKE) --no-print-directory -Onone "lab10.out"
 
 # Tool invocations
-midterm.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
+lab10.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: ARM Linker'
-	"C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.8.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"midterm.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.8.LTS/lib" -i"C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.8.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="midterm_linkInfo.xml" --rom_model -o "midterm.out" $(ORDERED_OBJS)
+	"C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.8.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab10.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.8.LTS/lib" -i"C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.8.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab10_linkInfo.xml" --rom_model -o "lab10.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
-midterm.hex: $(EXE_OUTPUTS)
+lab10.hex: $(EXE_OUTPUTS)
 	@echo 'Building files: $(strip $(EXE_OUTPUTS__QUOTED))'
 	@echo 'Invoking: ARM Hex Utility'
-	"C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.8.LTS/bin/armhex"  -o "midterm.hex" $(EXE_OUTPUTS__QUOTED)
+	"C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.8.LTS/bin/armhex"  -o "lab10.hex" $(EXE_OUTPUTS__QUOTED)
 	@echo 'Finished building: $(strip $(EXE_OUTPUTS__QUOTED))'
 	@echo ' '
 
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "cpe403_midterm_template.obj" "tm4c123gh6pm_startup_ccs.obj" "uartstdio.obj" "ustdlib.obj" 
-	-$(RM) "cpe403_midterm_template.d" "tm4c123gh6pm_startup_ccs.d" "uartstdio.d" "ustdlib.d" 
+	-$(RM) "midterm.obj" "tm4c123gh6pm_startup_ccs.obj" "uartstdio.obj" "ustdlib.obj" 
+	-$(RM) "midterm.d" "tm4c123gh6pm_startup_ccs.d" "uartstdio.d" "ustdlib.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

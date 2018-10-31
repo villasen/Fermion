@@ -12,37 +12,37 @@ LIB_SRCS += \
 C:/ti/tivaware_c_series_2_1_4_178/driverlib/ccs/Debug/driverlib.lib 
 
 C_SRCS += \
-../cpe403_midterm_template.c \
+../midterm.c \
 ../tm4c123gh6pm_startup_ccs.c \
 ../uartstdio.c \
 ../ustdlib.c 
 
 C_DEPS += \
-./cpe403_midterm_template.d \
+./midterm.d \
 ./tm4c123gh6pm_startup_ccs.d \
 ./uartstdio.d \
 ./ustdlib.d 
 
 OBJS += \
-./cpe403_midterm_template.obj \
+./midterm.obj \
 ./tm4c123gh6pm_startup_ccs.obj \
 ./uartstdio.obj \
 ./ustdlib.obj 
 
 OBJS__QUOTED += \
-"cpe403_midterm_template.obj" \
+"midterm.obj" \
 "tm4c123gh6pm_startup_ccs.obj" \
 "uartstdio.obj" \
 "ustdlib.obj" 
 
 C_DEPS__QUOTED += \
-"cpe403_midterm_template.d" \
+"midterm.d" \
 "tm4c123gh6pm_startup_ccs.d" \
 "uartstdio.d" \
 "ustdlib.d" 
 
 C_SRCS__QUOTED += \
-"../cpe403_midterm_template.c" \
+"../midterm.c" \
 "../tm4c123gh6pm_startup_ccs.c" \
 "../uartstdio.c" \
 "../ustdlib.c" 
